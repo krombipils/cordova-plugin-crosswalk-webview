@@ -1,5 +1,5 @@
 
-# This is a forked edition of the abondoned project of crosswalk
+# This is a fork of the abondoned project Crosswalk
 
 ## Installation
 
@@ -7,20 +7,20 @@
 cordova plugins add https://github.com/Arva/cordova-plugin-crosswalk-webview
 ```
 
-Note that when you start this project, for android, the app won't open automatically. This is due to a bug in cordova (as of now), of not inserting a space correctly when executing the `am` command. Open the app manually after deployment and it works fine.
+Note that when you start with `cordova run android`, the app won't open automatically. This is due to a bug in cordova (as of now), of not inserting a space correctly when executing the `am` command. Open the app manually after deployment and it works fine.
 
 
 ## What's the fork about?
 
-The forked version of crosswalk won't kick in at all if there's a newer version installed of the Android System Webview installed. 
+The forked version of crosswalk won't execute the Xwalk web view if there's a newer version installed of the Android System Webview installed. 
 
-To utilize modern es6 features in your app, you can create another .html utilizing that in your www/ directory. Let's say you call it es6index.html. By adding the plugin like this:
+To utilize modern es6 features in your app, you can create another .html in your www/ directory. Let's say you call it `es6index.html`. That can be passed to the plugin like this:
 
 ```
 cordova plugins add https://github.com/Arva/cordova-plugin-crosswalk-webview --variable MODERN_CHROME_ENTRY=es6index.html
 ```
 
-If a new version of the Android System Webview is found, it will now run es6index.html as an entry point. This means utilizing `async`, `await`, and not haivng to rely on polyfills like `core-js` anymore. There's still hope for mobile hybrid development!
+If a new version of the Android System Webview is found, it will now run es6index.html as an entry point. This means utilizing `async`, `await`, and not haivng to rely on polyfills like `core-js` anymore. Fast startup time! There's still hope for mobile hybrid development.
 
 
 Old Readme.md:
