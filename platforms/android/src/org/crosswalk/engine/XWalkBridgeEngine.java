@@ -18,7 +18,7 @@ import org.apache.cordova.engine.SystemWebViewEngine;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import nl.bizboard.xw.xw.MainActivity;
+//import nl.bizboard.xw.xw.MainActivity;
 
 /**
  * Created by lundfall on 26/07/2017.
