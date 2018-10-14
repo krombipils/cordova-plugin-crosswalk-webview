@@ -128,11 +128,18 @@ public class XWalkBridgeEngine implements CordovaWebViewEngine {
         }
         
         PackageManager packageManager = context.getPackageManager();
-        int enabledSetting = packageManager.getApplicationEnabledSetting("com.google.android.webview");
-        if (enabledSetting != PackageManager.COMPONENT_ENABLED_STATE_ENABLED && enabledSetting != PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
+		try {
+			int enabledSetting = packageManager.getApplicationEnabledSetting("com.google.android.webview");
+			if (enabledSetting != PackageManager.COMPONENT_ENABLED_STATE_ENABLED && enabledSetting != PackageManager.COMPONENT_ENABLED_STATE_DEFAULT) {
+				XWalkBridgeEngine.cachedShouldMakeXwalkWebView = true;
+				return true;
+			}
+		} catch (IllegalArgumentException e) {
+			// if the named package does not exist. 
             XWalkBridgeEngine.cachedShouldMakeXwalkWebView = true;
             return true;
         }
+		
         String majorVersionNumber = "0";
         int systemWebViewVersion = 0;
         try {
