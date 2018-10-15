@@ -125,10 +125,11 @@ module.exports = function(context) {
         // Pick the xwalk variables with the cli preferences
         // parseCliPreference();
 
-        // Add the permission of writing external storage when using shared mode
-        if (CordovaConfig.getGlobalPreference('xwalkMode') == 'shared') {
-            addPermission();
-        }
+		// Not required anymore ?
+        // Add the permission of writing external storage when using shared mode		
+        //if (CordovaConfig.getGlobalPreference('xwalkMode') == 'shared') {
+        //    addPermission();
+        //}
 
         // Configure the final value in the config.xml
         // var configXmlRoot = XmlHelpers.parseElementtreeSync(projectConfigurationFile);
